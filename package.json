@@ -21,8 +21,5 @@
   "bugs": {
     "url": "https://github.com/Xoxol/less-features/issues"
   },
-  "homepage": "https://github.com/Xoxol/less-features",
-  "dependencies": {
-    "less": "~1.7.4"
-  }
+  "homepage": "https://github.com/Xoxol/less-features"
 }
