@@ -1,0 +1,28 @@
+{
+  "name": "less-features",
+  "version": "0.0.1",
+  "description": "Plugin for create special conditions for mixin guards",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xoxol/less-features.git"
+  },
+  "keywords": [
+    "less",
+    "guard",
+    "checking-function",
+    "features"
+  ],
+  "author": "Eugene Kulikov",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/Xoxol/less-features/issues"
+  },
+  "homepage": "https://github.com/Xoxol/less-features",
+  "dependencies": {
+    "less": "~1.7.4"
+  }
+}
