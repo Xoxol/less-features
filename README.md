@@ -7,6 +7,7 @@ Plugin for create special conditions for mixin guards
 **Init**
 ```javascript
 var features = require("less-features"),
+    tree = require('less').tree,
     list = {
         "feature": {
             "state": true
@@ -16,7 +17,7 @@ var features = require("less-features"),
         }
     };
 
-parsedLessObj.toCSS({"plugins": [new features(list)]});
+parsedLessObj.toCSS({"plugins": [new features(tree, list)]});
 ```
 
 **Call in LESS**
