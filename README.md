@@ -4,20 +4,21 @@ LESS custom conditions
 Plugin for create special conditions for mixin guards
 
 ##Usage
+
 **Init**
 ```javascript
-var features = require("less-features"),
-    tree = require('less').tree,
+var Features = require("less-features");
     list = {
         "feature": {
             "state": true
         },
         "another-feature": {
             "state": false
-        }
+        },
+        "one-more-feature": true
     };
 
-parsedLessObj.toCSS({"plugins": [new features(tree, list)]});
+less.render(lessString, {plugins: [new Features(list)]}, function(err, result) {/* */});
 ```
 
 **Call in LESS**
@@ -32,6 +33,11 @@ parsedLessObj.toCSS({"plugins": [new features(tree, list)]});
         color: green;
     }
 }
+.guarded-mixin() when (feature("one-more-feature")) {
+    .one-more-class {
+        color: blue;
+    }
+}
 .guarded-mixin();
 ```
 
@@ -39,5 +45,8 @@ parsedLessObj.toCSS({"plugins": [new features(tree, list)]});
 ```CSS
 .class {
     color: red;
+}
+.one-more-class {
+    color: blue;
 }
 ```

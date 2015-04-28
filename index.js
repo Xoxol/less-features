@@ -1,17 +1,24 @@
-function FeaturesChecker(tree, features) {
+function FeaturesChecker(features) {
     this._features = features;
-    this._tree = tree;
 }
 
 FeaturesChecker.prototype = {
-    run: function() {
-        var features = this._features,
-            tree = this._tree;
+    install: function(less) {
+        var features = this._features;
 
-        tree.functions.feature = function(feature) {
-            return features[feature.value] && features[feature.value].state ? tree.True : tree.False;
-        }
-    }
+        less.functions.functionRegistry.add('feature', function(feature) {
+
+            if(typeof features[feature.value] === 'boolean') {
+                feature = features[feature.value];
+            } else {
+                feature = features[feature.value] && features[feature.value].state;
+            }
+
+            return feature ? less.tree.Keyword.True : less.tree.Keyword.False;
+
+        });
+    },
+    minVersion: [2, 0 , 0]
 };
 
 module.exports = FeaturesChecker;
