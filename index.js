@@ -1,5 +1,5 @@
 function FeaturesChecker(features) {
-    this._features = features;
+    this._features = features || {};
 }
 
 FeaturesChecker.prototype = {
